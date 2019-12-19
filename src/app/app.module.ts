@@ -10,10 +10,15 @@ import { EffectsModule } from "@ngrx/effects";
 import { AuthService } from './services/auth.service';
 import { AuthEffects } from './store/effects/auth.effects';
 import { reducers } from './store/app.states';
+import { SidenavComponent } from './dasboard/sidenav/sidenav.component';
+import { TopnavComponent } from './dasboard/topnav/topnav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SidenavComponent,
+    TopnavComponent,
+    
   ],
   imports: [
     BrowserModule,
