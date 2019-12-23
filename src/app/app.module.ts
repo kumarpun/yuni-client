@@ -12,6 +12,8 @@ import { AuthEffects } from './store/effects/auth.effects';
 import { reducers } from './store/app.states';
 import { SidenavComponent } from './dasboard/sidenav/sidenav.component';
 import { TopnavComponent } from './dasboard/topnav/topnav.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomMaterialModule } from './core/material/material.module';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,11 @@ import { TopnavComponent } from './dasboard/topnav/topnav.component';
     AuthModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
+    CustomMaterialModule,
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
     EffectsModule.forRoot([AuthEffects]),
-    StoreModule.forRoot(reducers, {})
+    StoreModule.forRoot(reducers, {}),
+    BrowserAnimationsModule
     // EffectsModule.forRoot([])
   ],
   providers: [

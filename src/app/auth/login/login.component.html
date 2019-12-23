@@ -2,8 +2,8 @@
 <form class="form clearfix" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <div class="form-input">
       <label for="username">Username</label>
-      <input type="text" formControlName="username" class="form-control"
-      [(ngModel)]="user.username" />
+      <input type="text" formControlName="username" class="form-control" [(ngModel)]="user.username"
+     />
       <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
           <div *ngIf="f.username.errors.required">Username is required</div>
       </div>

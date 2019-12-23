@@ -1,1 +1,29 @@
-<p>sidenav works!</p>
+<mat-toolbar class="container">
+<mat-toolbar-row>
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" color="primary">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <span class="fill-remaining-space">
+    </span>
+</mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #drawer mode="side" opened role="navigation" class="sidenav-content">
+        <mat-nav-list>
+            <div>
+            <a mat-list-item class="list-items1" routerLink="#"><mat-icon mat-list-icon>dashboard</mat-icon>Dashboard Admin</a>
+             </div>
+             <div>
+                 <a mat-list-item class="list-items" routerLink="#"><mat-icon mat-list-icon>chat</mat-icon>Categories</a>
+             </div>
+             <div>
+                 <a mat-list-item class="list-items" routerLink='#'><mat-icon mat-list-icon>people</mat-icon>Member</a>
+             </div>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+    

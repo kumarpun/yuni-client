@@ -1,0 +1,57 @@
+.mat-sidenav-container {
+    position: fixed;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    min-width: 100%;
+}
+    .fill-remaining-space {
+        /* This fills the remaining space, by using flexbox. 
+           Every toolbar row uses a flexbox row layout. */
+        flex: 1 1 auto;  
+        
+      }
+      .container {
+        color: white;
+        background: white;
+
+      }
+      .sidenav-content {
+        width: 200px;
+        height: 800px;
+        background-color: #4067d0;
+        background-size: cover;
+        color: #ffffff;
+
+      }
+      .example1 {
+            background: rgba(2, 2, 2, 0.54);
+            min-height: 100vh;
+        }
+      
+      .toolbar-spacing{
+        padding: 2px
+    }
+    
+    .img {
+        width: 135px;
+        height: 50px;
+        margin-top: 0;
+        margin-right: 53px;
+    }
+    
+    .toolbar-font{
+        font-size: 10px
+    }
+ 
+  .list-items {
+    /* border: 1px solid rgb(240, 236, 236); */
+    display: -webkit-flex; /* Safari */
+    display: flex;
+  }
+  .list-items1 {
+    /* border: 1px solid rgb(207, 204, 204); */
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    margin-top: -8px;
+  }
