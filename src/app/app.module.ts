@@ -14,12 +14,14 @@ import { SidenavComponent } from './dasboard/sidenav/sidenav.component';
 import { TopnavComponent } from './dasboard/topnav/topnav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomMaterialModule } from './core/material/material.module';
+import { AddProductComponent } from './product/add-product/add-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
     TopnavComponent,
+    AddProductComponent,
     
   ],
   imports: [

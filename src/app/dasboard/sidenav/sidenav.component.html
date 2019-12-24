@@ -5,6 +5,13 @@
     </button>
     <span class="fill-remaining-space">
     </span>
+    <button mat-raised-button color="Primary" [matMenuTriggerFor]="menu"><mat-icon>person_outline</mat-icon>My Profile</button>
+    
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="#"><mat-icon>person</mat-icon>Profile</button>
+        <button mat-menu-item routerLink="#"><mat-icon>settings</mat-icon>Change Password</button>
+        <button mat-menu-item (click)="logOut()"><mat-icon>exit_to_app</mat-icon>Logout</button>
+    </mat-menu>
 </mat-toolbar-row>
 </mat-toolbar>
 

@@ -17,11 +17,10 @@
 
       }
       .sidenav-content {
-        width: 200px;
+        width: 220px;
         height: 800px;
         background-color: #4067d0;
         background-size: cover;
-        color: #ffffff;
 
       }
       .example1 {
@@ -48,10 +47,14 @@
     /* border: 1px solid rgb(240, 236, 236); */
     display: -webkit-flex; /* Safari */
     display: flex;
+    color: #dae2f7;
+
   }
   .list-items1 {
     /* border: 1px solid rgb(207, 204, 204); */
     display: -webkit-flex; /* Safari */
     display: flex;
     margin-top: -8px;
+    color: #ffffff;
+
   }

@@ -17,4 +17,7 @@ export class AuthService {
         return this.http.post<User>(url, { username, password });
     }
 
+    logout() {
+      localStorage.removeItem('currentUser');
+    }
 }
