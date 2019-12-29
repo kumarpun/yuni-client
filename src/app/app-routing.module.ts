@@ -10,7 +10,13 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: SidenavComponent
+    component: SidenavComponent,
+    children: [
+      {
+        path: 'product',
+        loadChildren: './product/product.module#ProductModule'
+      }
+    ]
   }
 ];
 
