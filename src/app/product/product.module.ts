@@ -3,6 +3,7 @@ import { ProductRoutingModule } from './product-routing.module';
 import { AddProductComponent } from './add-product/add-product.component';
 import { ListProductComponent } from './list-product/list-product.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CustomMaterialModule } from '../core/material/material.module';
 
 @NgModule({
     declarations: [
@@ -11,7 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
     ],
     imports: [
         ProductRoutingModule,
-        HttpClientModule
+        HttpClientModule,
+        CustomMaterialModule
     ],
     providers: []
 })

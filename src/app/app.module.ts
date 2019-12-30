@@ -15,6 +15,8 @@ import { TopnavComponent } from './dasboard/topnav/topnav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomMaterialModule } from './core/material/material.module';
 import { ProductModule } from './product/product.module'; 
+import { FormServices } from './services/form';
+import { FlexLayoutModule } from '@angular/flex-layout'
 
 
 @NgModule({
@@ -35,11 +37,13 @@ import { ProductModule } from './product/product.module';
     EffectsModule.forRoot([AuthEffects]),
     StoreModule.forRoot(reducers, {}),
     BrowserAnimationsModule,
-    ProductModule
+    ProductModule,
+    FlexLayoutModule
     // EffectsModule.forRoot([])
   ],
   providers: [
-    AuthService
+    AuthService,
+    FormServices
   ],
   bootstrap: [AppComponent]
 })

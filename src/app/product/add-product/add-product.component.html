@@ -1,1 +1,28 @@
-<p>add-product works!</p>
+<section class="mat-typography">
+    <h2>Products</h2>
+</section>
+<form (submit)="onSubmit()">
+    <div class="card-layout">
+        <div class="column-1">
+            <label>
+                Product Title:
+                <mat-form-field style="width: 150px;" class="field-reason">
+                    <input matInput placeholder="Product Title" formControlName="ProductTitle">
+                </mat-form-field>
+            </label>  <br/>
+            <div class="form-group">
+                <input type="file" formControlName="image" (change)="fileProgress($event)">
+            </div>
+            <div *ngIf="fileUploadProgress">
+                Upload progress: {{ fileUploadProgress }}
+            </div>
+            <div class="image-preview mb-3" *ngIf="previewUrl">
+                <img [src]="previewUrl" height="300">
+            </div>
+            <div class="mb-3" *ngIf="uploadFilePath">
+                {{ uploadedFilePath}}
+            </div>
+        <button mat-raised-button type="submit">Submit</button>
+        </div>
+    </div>
+</form>

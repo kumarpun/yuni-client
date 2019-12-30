@@ -1,4 +1,9 @@
 <div class="clearfix">
+        <div *ngIf="errorMessage">
+            <div class="alert alert-danger" role="alert">
+              {{errorMessage}}
+            </div>
+    </div>
 <form class="form clearfix" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <div class="form-input">
       <label for="username">Username</label>
@@ -18,9 +23,6 @@
         <button class="btn btn-submit">
             Sign in
         </button>
-    <!-- <div *ngIf="invalidLogin" class="error">
-        <div>Invalide credentials</div> -->
-    <!-- </div> -->
   </form>
   </div>
  
