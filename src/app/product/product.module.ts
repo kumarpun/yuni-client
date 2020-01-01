@@ -4,6 +4,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { ListProductComponent } from './list-product/list-product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomMaterialModule } from '../core/material/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -13,7 +14,9 @@ import { CustomMaterialModule } from '../core/material/material.module';
     imports: [
         ProductRoutingModule,
         HttpClientModule,
-        CustomMaterialModule
+        CustomMaterialModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     providers: []
 })

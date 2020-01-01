@@ -1,13 +1,13 @@
 <section class="mat-typography">
     <h2>Products</h2>
 </section>
-<form (submit)="onSubmit()">
+<form [formGroup]="productForm" (submit)="onSubmit()">
     <div class="card-layout">
         <div class="column-1">
             <label>
                 Product Title:
                 <mat-form-field style="width: 150px;" class="field-reason">
-                    <input matInput placeholder="Product Title" formControlName="ProductTitle">
+                    <input matInput placeholder="Product Title" formControlName="productTitle">
                 </mat-form-field>
             </label>  <br/>
             <div class="form-group">

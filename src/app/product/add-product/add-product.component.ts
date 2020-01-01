@@ -1,8 +1,11 @@
 import { Component, OnInit, Inject, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { FormServices } from '../../services/form';
 import { HttpClient, HttpEventType } from '@angular/common/http';
+import { ProductService } from '../../services/product.service';
+import { first } from 'rxjs/operators';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-add-product',
@@ -10,15 +13,35 @@ import { HttpClient, HttpEventType } from '@angular/common/http';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
+  product: Product = new Product();
 
 fileData: File = null;
 previewUrl: any = null;
 fileUploadProgress: string = null;
 uploadedFilePath: string = null;
+productForm: FormGroup;
+public loading = false;
+public submitted = false;
+public image: any = this.service.form.value.image;
+fileToUpload: File ;
+
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private formBuilder: FormBuilder,
+    public service: ProductService,
+    public formService: FormServices
   ) { 
+    this.createForm();
+  }
+
+  
+  createForm() {
+    this.productForm = this.formBuilder.group({
+      productTitle: [""],
+      image: [""]
+
+    })
   }
 
   fileProgress(fileInput: any) {
@@ -41,4 +64,16 @@ uploadedFilePath: string = null;
   ngOnInit() {
   }
 
+  onSubmit() {
+    this.formService.markFormGroupTouched(this.productForm);
+    const productTitle = this.productForm.value.productTitle;
+    const formData = new FormData();
+    formData.append('productTitle', productTitle);
+    formData.append('image', this.fileData);
+    this.http.post('http://localhost:3000/api/product/addProduct', formData)
+      .subscribe(res => {
+        console.log(res);
+        alert('SUCCESS !!');
+      }) 
+    }
 }
