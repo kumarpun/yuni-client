@@ -1,0 +1,47 @@
+.container{
+    box-shadow: 0 0 2px #4067d0;
+    margin: 20px;
+
+}
+.form-scroll{
+    overflow-y: scroll;
+    flex-flow: column wrap;
+    height: 580px;
+
+}
+
+h2{
+    color: #4067d0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.product-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.product-box mat-form-field{
+    flex: 1;
+    margin-left: 10px;
+    padding: 10px;
+}
+.dropdown{
+    margin-left: 10px;
+    padding: 10px;
+}
+.product-photo{
+    margin-left: 10px;
+    padding: 10px;
+}
+.form-button{
+    margin-left: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.color{
+    background-color: #4067d0;
+    color: #ffffff;
+}

@@ -16,13 +16,17 @@ export class ProductService {
 
     form: FormGroup = new FormGroup({
         productTitle: new FormControl(''),
-        image: new FormControl('')
+        image: new FormControl(''),
+        originalPrice: new FormControl(''),
+        discount: new FormControl(''),
     });
 
     initializeFormGroup() {
         this.form.setValue({
             productTitle: '',
-            image: ''
+            image: '',
+            originalPrice: '',
+            discount: '',
         });
     }
 

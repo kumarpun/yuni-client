@@ -17,7 +17,7 @@ import { CustomMaterialModule } from './core/material/material.module';
 import { ProductModule } from './product/product.module'; 
 import { FormServices } from './services/form';
 import { FlexLayoutModule } from '@angular/flex-layout'
-
+import { DigiiService } from './services/test.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,8 @@ import { FlexLayoutModule } from '@angular/flex-layout'
   ],
   providers: [
     AuthService,
-    FormServices
+    FormServices,
+    DigiiService
   ],
   bootstrap: [AppComponent]
 })

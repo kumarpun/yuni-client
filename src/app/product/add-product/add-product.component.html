@@ -1,19 +1,30 @@
-<section class="mat-typography">
-    <h2>Products</h2>
-</section>
-<form [formGroup]="productForm" (submit)="onSubmit()">
-    <div class="card-layout">
-        <div class="column-1">
-            <label>
-                Product Title:
-                <mat-form-field style="width: 150px;" class="field-reason">
+<div class="container">
+<form class="form-scroll" [formGroup]="productForm" (submit)="onSubmit()">
+        <h2>Add Products</h2>
+    <div class="product-box" >
+                <mat-form-field appearance="outline" style="width: 300px;">
+                    <mat-label>Product name</mat-label>
                     <input matInput placeholder="Product Title" formControlName="productTitle">
                 </mat-form-field>
-            </label>  <br/>
-            <div class="form-group">
+                <mat-form-field appearance="outline" style="width: 300px;">
+                    <mat-label>Original price</mat-label>
+                    <input matInput placeholder="Original Price" formControlName="originalPrice">
+                </mat-form-field>
+             </div>
+
+             <div class="dropdown">
+                <mat-form-field>
+                <mat-label>Discount</mat-label>
+                <mat-select formControlName="discount" >
+                    <mat-option *ngFor="let discount of discounts" [value]="discount"
+                    >{{discount}}</mat-option>
+                </mat-select>
+                </mat-form-field>
+              </div>
+                 <div class="product-photo" >
                 <input type="file" formControlName="image" (change)="fileProgress($event)">
-            </div>
-            <div *ngIf="fileUploadProgress">
+              
+                <div *ngIf="fileUploadProgress">
                 Upload progress: {{ fileUploadProgress }}
             </div>
             <div class="image-preview mb-3" *ngIf="previewUrl">
@@ -21,8 +32,11 @@
             </div>
             <div class="mb-3" *ngIf="uploadFilePath">
                 {{ uploadedFilePath}}
+          </div>
+             </div>
+            <div class="form-button">
+                <button class="color" mat-button mat-raised-button type="submit">Submit</button>
             </div>
-        <button mat-raised-button type="submit">Submit</button>
-        </div>
-    </div>
+
 </form>
+</div>
