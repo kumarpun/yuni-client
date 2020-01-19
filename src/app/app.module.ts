@@ -18,6 +18,11 @@ import { ProductModule } from './product/product.module';
 import { FormServices } from './services/form';
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { DigiiService } from './services/test.service';
+import {ToastrModule} from "ngx-toastr";
+import {NgSpinKitModule} from 'ng-spin-kit';
+import {LaddaModule} from "angular2-ladda";
+import { RestApiService } from './services/image.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -38,13 +43,24 @@ import { DigiiService } from './services/test.service';
     StoreModule.forRoot(reducers, {}),
     BrowserAnimationsModule,
     ProductModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    NgSpinKitModule,
+    LaddaModule,
+    NgbModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+      maxOpened: 5,
+      newestOnTop: false,
+    })
     // EffectsModule.forRoot([])
   ],
   providers: [
     AuthService,
     FormServices,
-    DigiiService
+    DigiiService,
+    RestApiService
   ],
   bootstrap: [AppComponent]
 })

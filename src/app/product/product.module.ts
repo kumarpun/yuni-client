@@ -5,6 +5,7 @@ import { ListProductComponent } from './list-product/list-product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomMaterialModule } from '../core/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         HttpClientModule,
         CustomMaterialModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        NgbModule
     ],
     providers: []
 })

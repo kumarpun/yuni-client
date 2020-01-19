@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { DigiiService } from '../../services/test.service';
+import { RestApiService } from '../../services/image.service';
+import {ToastrService} from "ngx-toastr";
+import { ProductService } from '../../services/product.service';
+import { Product } from '../../models/product';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-list-product',
@@ -8,17 +12,19 @@ import { DigiiService } from '../../services/test.service';
 })
 export class ListProductComponent implements OnInit {
 
-  constructor(
-    private service: DigiiService
-  ) { }
-  ngOnInit() {
+  Products: any = [];
+
+  constructor(public fileUploadService: RestApiService) {
+    this.getUsers();
   }
-  
-  onSubmit() {
-    return this.service.RunTest()
-    .subscribe(res => {
-      console.log(res);
-      alert('SUCCESS !!');
+
+  ngOnInit() { }
+
+  getUsers() {
+    this.fileUploadService.getUsers().subscribe((res) => {
+      this.Products = res['products'];
     })
   }
-  }
+
+}
+

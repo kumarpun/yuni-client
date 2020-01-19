@@ -8,7 +8,7 @@ import { User } from '../models/user';
 })
 export class AuthService {
 
-    private BASE_URL = 'http://localhost:3000/api/auth';
+    private BASE_URL = 'http://localhost:4000/api/user';
 
     constructor(private http: HttpClient) { }
 

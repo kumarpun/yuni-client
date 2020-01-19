@@ -1,8 +1,24 @@
-<div class="container">
-    <h1>Digii Protractor Test</h1>
-    <form (submit)="onSubmit()">
-    <div class="'form-button">
-      <button class="color" mat-button mat-raised-button type="submit">Submit</button>
+<div class="container mt-5" style="font-family:Pridi;">
+  <p class="lead text-center">Recommended Deals:</p>
+
+  <div>
+    <div *ngIf="!products" class="m-auto">
+      <div style='position: fixed;top: 0;bottom: 0;left: 0;right: 0;width: 200px;height: 100px;margin: auto;'>
+      </div>
     </div>
-    </form>
-  </div>
+
+  <div class="row">
+    <div *ngFor="let product of Products; let i = index"  class=" col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-3">
+      <div class="card bg-light">  
+      <img [src]="product.image" [alt]="product.name"
+          class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{product.name}} <small class="text-muted">{{product.category}}</small></h5>
+            <p class="card-text">{{product.price | currency}}</p>
+          </div>
+      </div>
+</div>
+</div>
+
+</div>
+</div>

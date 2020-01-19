@@ -12,7 +12,8 @@ import * as _ from 'lodash';
 })
 
 export class ProductService {
-    public Url: string = 'http://localhost:3000/api/product';
+    public Url: string = 'http://localhost:4000/api/product';
+    public eUrl: string = 'http://localhost:3000/';
 
     form: FormGroup = new FormGroup({
         productTitle: new FormControl(''),
@@ -32,13 +33,16 @@ export class ProductService {
 
     constructor(private http: HttpClient) { }
 
-    private generateHeaders() {
-        return {
-            headers: new HttpHeaders({ 'Content-Type': 'application/json'})
-        };
-    }
+    getHeaders(){
+        const token = localStorage.getItem('token');
+        return token ? new HttpHeaders().set("token", token) : null;
+      }
 
     AddNewProduct(data) {
         return this.http.post(`${this.Url}/addProduct`, data);
+    }
+
+    get(link: string) {
+        return this.http.get(this.eUrl + link, {headers: this.getHeaders()}).toPromise();
     }
 }
